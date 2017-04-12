@@ -1,0 +1,270 @@
+@import "bootstrap.less";
+
+body {
+  background: #edeae6;
+}
+
+.vifonic-style {
+  background: @brand-primary;
+  color: #fff;
+  &:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    border: darken(@brand-success, 6%) solid 1px;
+  }
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  #topbar {
+    overflow: hidden; max-height: 44px;
+    .transition(max-height .3s);
+    > .container {
+      padding-top: 12px; padding-bottom: 12px;
+    }
+    .socials {
+      margin-bottom: 0;
+      a {
+        margin-left: 8px;
+      }
+    }
+    a {
+      color: #fff;
+    }
+    i {
+      color: @brand-success;
+    }
+  }
+  #main-navbar {
+    background: rgba(34, 34, 34, 0.4);
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    border: none;
+    .transition(padding-bottom .3s);
+    .navbar-brand {
+      img { .transition(width .3s) }
+    }
+    a {
+      color: #fff;
+      font-size: 15px;
+      &:hover {
+        color: @brand-success;
+      }
+    }
+    .navbar-right {
+      padding-top: 25px;
+      .transition(padding-top .3s);
+      li.dropdown.open, li.active {
+        a {
+          background: transparent;
+          color: @brand-success;
+        }
+      }
+    }
+  }
+}
+
+#header.stick {
+  #topbar {
+    max-height: 0;
+  }
+  #main-navbar {
+    background: rgb(34, 34, 34);
+    padding-bottom: 15px;
+    .navbar-right {
+      padding-top: 10px;
+    }
+    .navbar-brand {
+      img { width: 70% }
+    }
+  }
+}
+
+#main-slider {
+  .item {
+    > .wrap {
+      position: relative;
+      .hover {
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%; height: 100%;
+        background: url(../images/slide1-hover.png) center bottom no-repeat;
+      }
+      .text {
+        position: absolute;
+        top: 25%; left: 0;
+        width: 100%;
+        .text-1 {
+          font-family: @headings-font-family;
+          font-size: 25px;
+          color: #fff;
+          margin-bottom: 15px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        h3 {
+          text-transform: uppercase;
+          color: @brand-success;
+          font-size: 65px;
+          margin: 0 0 15px 0;
+        }
+        .text-2 {
+          color: #ccc;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+#restaurant {
+  padding-top: 50px;
+  .item {
+    > .wrap {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      padding: 22px;
+      margin: 0 0 44px 0;
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      background: #fff;
+      &:before {
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: #edeae6 1px solid;
+      }
+      .title {
+        padding: 11px;
+        font-size: 18px;
+        text-align: center;
+        position: relative;
+        top: -33px;
+        margin: 0 0 -11px 0;
+        z-index: 1;
+      }
+      .map {
+        background: #ccc;
+        height: 180px;
+        margin-bottom: 15px;
+      }
+      .text {
+        margin-bottom: 15px;
+      }
+      .read-more {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        border: none;
+        padding: 7px 22px;
+        line-height: 1.4em;
+        font-size: 15px;
+        text-align: center;
+        &:hover {
+          background: darken(@brand-primary, 6%);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  background: url(../images/footer-bg.jpg);
+  padding-top: 40px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  #footer-left {
+    position: absolute;
+    bottom: 0; left: 0;
+  }
+  #footer-right {
+    position: absolute;
+    bottom: 0; right: 0;
+  }
+  a {
+    color: @brand-success;
+  }
+  .logo {
+    margin-bottom: 15px;
+  }
+  .footer-text {
+    margin-bottom: 40px;
+  }
+  .widget-title {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    &:after {
+      content: "";
+      width: 70px; height: 2px;
+      display: block; margin-top: 5px;
+      background: @brand-success;
+    }
+  }
+  .menu {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+  p {
+    line-height: 1.7em;
+  }
+  .input-group {
+    input {
+      border: none;
+    }
+    button {
+      border: none;
+      padding-top: 7px; padding-bottom: 7px;
+    }
+  }
+  @media (min-width: 992px) {
+    .footer-menu {
+      width: 19%;
+    }
+    .newsletter {
+      width: 34%;
+      padding-right: 90px;
+    }
+    .footer-info {
+      width: 28%;
+    }
+  }
+}
+
+#footer-bottom {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  .socials {
+    a {
+      display: inline-block;
+      width: 46px; height: 46px;
+      text-align: center; line-height: 46px;
+      font-size: 20px;
+      background: @brand-success;
+      color: #fff; margin: 0 8px;
+      border-radius: 50%;
+      &:hover {
+        background: @brand-primary;
+      }
+    }
+  }
+}
+
+#copyright { margin-top: 15px }
